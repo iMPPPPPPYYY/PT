@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background: transparent;
+}
+
+#pet {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 160px;
+  text-align: center;
+  user-select: none;
+}
+
+#pet-img {
+  width: 100%;
+  cursor: pointer;
+}
+
+#speech {
+  font-family: monospace;
+  font-size: 14px;
+  background: white;
+  border: 2px solid black;
+  padding: 4px 6px;
+  margin-bottom: 6px;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+#counter {
+  margin-top: 6px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
