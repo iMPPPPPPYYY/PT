@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Pet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="ui">
+  <select id="characterSelect">
+    <option value="aruvelut">Aruvelut</option>
+    <option value="pxh">pxh</option>
+  </select>
+
+  <button id="dragBtn">Drag: OFF</button>
+
+  <select id="scaleSelect">
+    <option value="1">100%</option>
+    <option value="1.2">120%</option>
+    <option value="1.4">140%</option>
+  </select>
+</div>
+
+<div id="counter">Clicks: 0</div>
+
+<div id="pet-container">
+  <img id="pet" src="" draggable="false">
+  <div id="bubble">咕咕咕</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+
