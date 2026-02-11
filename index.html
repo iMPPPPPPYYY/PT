@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Pet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 左上角：角色相关 -->
+<div id="ui">
+  <select id="characterSelect">
+    <option value="aruvelut">Aruvelut</option>
+    <option value="pxh">pxh</option>
+  </select>
+
+  <button id="dragBtn">Drag: OFF</button>
+
+  <select id="scaleSelect">
+    <option value="1">100%</option>
+    <option value="1.2">120%</option>
+    <option value="1.4">140%</option>
+  </select>
+</div>
+
+<!-- 右上角：点击数 -->
+<div id="counter">Clicks: 0</div>
+
+<!-- 桌宠 -->
+<div id="pet-container">
+  <img id="pet" src="" draggable="false">
+  <div id="bubble">咕咕咕</div>
+</div>
+
+<!-- 右下角：存档相关 -->
+<div id="save-ui">
+  <button onclick="saveGame()">Save</button>
+  <button onclick="resetGame()">Reset</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
