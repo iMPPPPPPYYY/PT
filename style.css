@@ -75,7 +75,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  z-index: 9999; /* ✅ 关键：保证在最上层 */
+  z-index: 9999;
 }
 
 /* 隐藏 */
