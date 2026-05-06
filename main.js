@@ -175,3 +175,25 @@ autoBlink();
 setInterval(saveGame, 10000);
 
 
+// ===== 公告功能 =====
+const noticeBtn = document.getElementById("noticeBtn");
+const noticePanel = document.getElementById("noticePanel");
+const closeNotice = document.getElementById("closeNotice");
+
+// 打开公告
+noticeBtn.onclick = () => {
+  noticePanel.classList.remove("hidden");
+};
+
+// 关闭公告（×）
+closeNotice.onclick = (e) => {
+  e.stopPropagation(); // 防止事件冒泡冲突
+  noticePanel.classList.add("hidden");
+};
+
+// 点击背景关闭（只点外层才关闭）
+noticePanel.addEventListener("click", (e) => {
+  if (e.target === noticePanel) {
+    noticePanel.classList.add("hidden");
+  }
+});
