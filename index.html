@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Pet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 左上角：角色相关 -->
+<div id="ui">
+  <select id="characterSelect">
+    <option value="aruvelut">Aruvelut</option>
+    <option value="pxh">pxh</option>
+  </select>
+
+  <button id="dragBtn">Drag: OFF</button>
+
+  <select id="scaleSelect">
+    <option value="1">100%</option>
+    <option value="1.2">120%</option>
+    <option value="1.4">140%</option>
+  </select>
+
+ <!-- 公告按钮 -->
+  <button id="noticeBtn"></button>
+</div>
+
+<!-- 右上角：点击数 -->
+<div id="counter">Clicks: 0</div>
+
+<!-- 桌宠 -->
+<div id="pet-container">
+  <img id="pet" src="" draggable="false">
+  <div id="bubble">咕咕咕</div>
+</div>
+
+<!-- 右下角：存档相关 -->
+<div id="save-ui">
+  <button onclick="saveGame()">Save</button>
+  <button onclick="resetGame()">Reset</button>
+</div>
+<!-- 公告弹窗 -->
+<div id="noticePanel" class="hidden">
+  <div class="notice-content">
+    <span id="closeNotice">×</span>
+    <h2>公告</h2>
+
+    <div class="notice-body">
+     <p>
+      版本：v0.2.2-alpha <br>
+      更新日志： <br>
+      2026-05-06 <br>
+      <span style="color: blue; font-weight: bold;">
+      ### 添加 <br>
+      - 公告系统 <br>
+      ### 重大事件 <br>
+      - 没有大更新，但是因为神秘不知名因素，导致此网站整个文件从我电脑中被删除 <br>
+      - 从github下载之前的了 0.2.1 版本，但是原本正在做的icon文件要重做了。。<br>
+      - 悲痛哀悼我失去的数据… R.I.P
+      </span>
+      ————————————————— <br>
+      此网站为个人创作，目前持续更新中 <br>
+      你可以在这里->! <b>B站Asumu_Imp / Lofter impo 找到我 </b><br>
+      以下是网站反馈问卷调查，有任何bug/意见 都可以填写问卷，我会查看！<br>
+      非常感谢每个参与测试的人！我会尽力完善这个网页的！<br>
+      <!-- 以后就在这里改内容 -->
+     </p>
+      <img src="assets/ui/survey.png" class="notice-img">
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
