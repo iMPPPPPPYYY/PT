@@ -23,6 +23,8 @@ body {
   left: 200px;
   top: 200px;
   cursor: pointer;
+
+  touch-action: none;
 }
 
 #pet {
@@ -115,4 +117,18 @@ body {
   display: block;
   margin: 10px auto;
   border-radius: 8px;
+}
+
+#versionText {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+
+  user-select: none;
+  pointer-events: none;
+
+  z-index: 5;
 }
