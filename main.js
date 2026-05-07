@@ -40,7 +40,7 @@ function randomOpen() {
   return Math.random() < 0.5 ? "open1" : "open2";
 }
 
-// ===== 全局数据（✔ 每个角色独立）=====
+// ===== 全局数据（每个角色独立）=====
 const SAVE_KEY = "petGameSave";
 
 let gameData = {
@@ -112,20 +112,20 @@ dragBtn.onclick = () => {
   dragBtn.textContent = `Drag: ${dragMode ? "ON" : "OFF"}`;
 };
 
-container.addEventListener("mousedown", e => {
+container.addEventListener("pointerdown", e => {
   if (!dragMode) return;
   isDragging = true;
   offsetX = e.clientX - container.offsetLeft;
   offsetY = e.clientY - container.offsetTop;
 });
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("pointermove", e => {
   if (!isDragging) return;
   container.style.left = e.clientX - offsetX + "px";
   container.style.top = e.clientY - offsetY + "px";
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("pointerup", () => {
   isDragging = false;
 });
 
