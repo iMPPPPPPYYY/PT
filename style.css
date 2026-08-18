@@ -2,26 +2,40 @@ body {
   margin: 0;
   height: 100vh;
   overflow: hidden;
-  background: transparent;
+
+  background: white;
+
+  font-family: sans-serif;
 }
 
+/* ===== 左上角UI ===== */
 #ui {
   position: fixed;
   top: 10px;
   left: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   z-index: 10;
 }
 
+/* ===== 点击数 ===== */
 #counter {
   position: fixed;
   top: 10px;
   right: 10px;
+
+  z-index: 10;
 }
 
+/* ===== 桌宠 ===== */
 #pet-container {
   position: absolute;
   left: 200px;
   top: 200px;
+
   cursor: pointer;
 
   touch-action: none;
@@ -29,28 +43,41 @@ body {
 
 #pet {
   width: 200px;
+
   user-select: none;
   pointer-events: auto;
 }
 
+/* ===== 气泡 ===== */
 #bubble {
   position: absolute;
+
   top: -30px;
   left: 50%;
+
   transform: translateX(-50%);
+
   background: white;
+
   padding: 4px 8px;
+
   border-radius: 6px;
+
   font-size: 14px;
+
   display: none;
 }
 
+/* ===== 存档按钮 ===== */
 #save-ui {
   position: fixed;
+
   right: 12px;
   bottom: 12px;
+
   display: flex;
   gap: 12px;
+
   z-index: 10;
 }
 
@@ -58,77 +85,379 @@ body {
 #noticeBtn {
   width: 40px;
   height: 40px;
-  background: url("assets/ui/notice.png") no-repeat center;
-  background-size: contain;
+
   border: none;
   cursor: pointer;
+
+  background:
+    url("assets/ui/notice.png")
+    no-repeat center;
+
+  background-size: contain;
+
+  background-color: transparent;
 }
 
-/* ===== 公告弹窗背景 ===== */
+/* ===== 隐藏 ===== */
+.hidden {
+  display: none !important;
+}
+
+/* ===== 公告弹窗 ===== */
 #noticePanel {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background: rgba(0,0,0,0.5);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 9999; /* ✅ 关键：保证在最上层 */
+  z-index: 9999;
 }
 
-/* 隐藏 */
-.hidden {
-  display: none !important;
-}
-
-/* 内容框 */
+/* ===== 公告内容 ===== */
 .notice-content {
-  width: 300px;
-  height: 400px;
+  position: relative;
+
+  width: 320px;
+  height: 420px;
+
   background: white;
+
+  border-radius: 14px;
+
   padding: 20px;
-  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.2);
 }
 
+/* ===== 公告滚动区域 ===== */
 .notice-body {
-  overflow-y: auto;
   flex: 1;
+
+  overflow-y: auto;
+
+  margin-top: 10px;
 }
 
-/* 关闭按钮 */
+/* ===== 公告关闭 ===== */
 #closeNotice {
   position: absolute;
+
   top: 10px;
   right: 15px;
+
   cursor: pointer;
-  font-size: 20px;
+
+  font-size: 22px;
 }
-/* 公告栏图片 */
+
+/* ===== 公告图片 ===== */
 .notice-img {
   width: 100%;
   max-width: 260px;
+
   display: block;
+
   margin: 10px auto;
+
   border-radius: 8px;
 }
 
+/* ===== 版本号 ===== */
 #versionText {
   position: fixed;
+
   left: 10px;
   bottom: 10px;
 
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.4);
+
+  color: rgba(0,0,0,0.4);
 
   user-select: none;
   pointer-events: none;
 
   z-index: 5;
+}
+
+/* ===== 右侧UI ===== */
+#side-ui {
+  position: fixed;
+
+  right: 12px;
+  top: 120px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  z-index: 20;
+}
+
+/* ===== 通用图标按钮 ===== */
+#chestBtn,
+#bagBtn,
+#settingsBtn {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-color: transparent;
+}
+
+/* ===== 宝箱 ===== */
+#chestBtn {
+  background-image:
+    url("assets/ui/chest.png");
+}
+
+/* ===== 背包 ===== */
+#bagBtn {
+  background-image:
+    url("assets/ui/bag.png");
+}
+
+/* ===== 设置 ===== */
+#settingsBtn {
+  background-image:
+    url("assets/ui/settings.png");
+}
+
+/* ===== 通用弹窗背景 ===== */
+.panel-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+/* ===== 通用内容 ===== */
+.panel-content {
+  position: relative;
+
+  width: 320px;
+  height: 420px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.2);
+}
+
+/* ===== 内容区域 ===== */
+.panel-body {
+  flex: 1;
+
+  overflow-y: auto;
+
+  margin-top: 10px;
+}
+
+/* ===== 关闭按钮 ===== */
+.closeBtn {
+  position: absolute;
+
+  top: 10px;
+  right: 15px;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+/* ===== 设置行 ===== */
+.setting-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  font-size: 13px;
+}
+
+/* ===== 调色器 ===== */
+#bgColorPicker {
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 50%;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  background: none;
+
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 4px black;
+}
+
+/* Chrome */
+#bgColorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+#bgColorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+/* ===== 手机版适配 ===== */
+@media (max-width: 768px) {
+
+  #pet {
+    width: 140px;
+  }
+
+  #ui {
+    top: 6px;
+    left: 6px;
+
+    gap: 4px;
+  }
+
+  #counter {
+    top: 6px;
+    right: 6px;
+
+    font-size: 14px;
+  }
+
+  #save-ui {
+    right: 6px;
+    bottom: 6px;
+
+    gap: 6px;
+  }
+
+  #side-ui {
+    right: 6px;
+    top: 100px;
+  }
+
+  .notice-content,
+  .panel-content {
+    width: 85%;
+    height: 70%;
+  }
+
+  #versionText {
+    font-size: 10px;
+  }
+
+  button,
+  select {
+    font-size: 12px;
+  }
+}
+
+/* ===== Tooltip ===== */
+#chestBtn,
+#bagBtn,
+#settingsBtn,
+#noticeBtn {
+  position: relative;
+}
+
+/* tooltip */
+#chestBtn::after,
+#bagBtn::after,
+#settingsBtn::after,
+#noticeBtn::after {
+  position: absolute;
+
+  right: 60px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(0,0,0,0.8);
+  color: white;
+
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.2s;
+}
+
+/* 各自文字 */
+#chestBtn::after {
+  content: "宝箱";
+}
+
+#bagBtn::after {
+  content: "背包";
+}
+
+#settingsBtn::after {
+  content: "设置";
+}
+
+#noticeBtn::after {
+  content: "公告";
+}
+
+/* hover显示（弹窗打开时禁用） */
+body:not(.panel-open)
+#chestBtn:hover::after,
+
+body:not(.panel-open)
+#bagBtn:hover::after,
+
+body:not(.panel-open)
+#settingsBtn:hover::after,
+
+body:not(.panel-open)
+#noticeBtn:hover::after {
+  opacity: 1;
 }
