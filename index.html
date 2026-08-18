@@ -2,82 +2,192 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Web Pet</title>
+
+  <!-- 手机适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>菜鸡联盟</title>
+
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="assets/ui/favicon.png">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+<!-- 左下角版本 -->
 <div id="versionText">
-  v0.2.3-alpha
+  v0.3.0-alpha
 </div>
-<!-- 左上角：角色 -->
+
+<!-- 左上角UI -->
 <div id="ui">
+
+  <!-- 角色选择 -->
   <select id="characterSelect">
     <option value="aruvelut">Aruvelut</option>
     <option value="pxh">pxh</option>
   </select>
 
-  <button id="dragBtn">Drag: OFF</button>
+  <!-- 拖拽 -->
+  <button id="dragBtn">
+    Drag: OFF
+  </button>
 
+  <!-- 缩放 -->
   <select id="scaleSelect">
     <option value="1">100%</option>
     <option value="1.2">120%</option>
     <option value="1.4">140%</option>
   </select>
 
- <!-- 公告按钮 -->
+  <!-- 公告 -->
   <button id="noticeBtn"></button>
+
 </div>
 
-<!-- 右上角：点击数 -->
-<div id="counter">Clicks: 0</div>
+<!-- 右侧UI -->
+<div id="side-ui">
+
+  <!-- 宝箱 -->
+  <button id="chestBtn"></button>
+
+  <!-- 背包 -->
+  <button id="bagBtn"></button>
+
+  <!-- 设置 -->
+  <button id="settingsBtn"></button>
+
+</div>
+
+<!-- 设置弹窗 -->
+<div id="settingsPanel" class="hidden panel-overlay">
+
+  <div class="panel-content">
+
+    <span class="closeBtn">×</span>
+
+    <h2>设置</h2>
+
+    <div class="panel-body">
+
+      <div class="setting-row">
+
+        <span>改变背景颜色</span>
+
+        <input type="color" id="bgColorPicker">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 背包弹窗 -->
+<div id="bagPanel" class="hidden panel-overlay">
+
+  <div class="panel-content">
+
+    <span class="closeBtn">×</span>
+
+    <h2>背包</h2>
+
+    <div class="panel-body">
+
+      <p>暂无物品</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 宝箱弹窗 -->
+<div id="chestPanel" class="hidden panel-overlay">
+
+  <div class="panel-content">
+
+    <span class="closeBtn">×</span>
+
+    <h2>宝箱</h2>
+
+    <div class="panel-body">
+
+      <p>暂无内容</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 右上角点击数 -->
+<div id="counter">
+  Clicks: 0
+</div>
 
 <!-- 桌宠 -->
 <div id="pet-container">
+
   <img id="pet" src="" draggable="false">
-  <div id="bubble">咕咕咕</div>
+
+  <div id="bubble">
+    咕咕咕
+  </div>
+
 </div>
 
-<!-- 右下角：存档相关 -->
+<!-- 存档 -->
 <div id="save-ui">
-  <button onclick="saveGame()">Save</button>
-  <button onclick="resetGame()">Reset</button>
+
+  <button onclick="saveGame()">
+    Save
+  </button>
+
+  <button onclick="resetGame()">
+    Reset
+  </button>
+
 </div>
+
 <!-- 公告弹窗 -->
 <div id="noticePanel" class="hidden">
+
   <div class="notice-content">
+
+    <!-- 关闭 -->
     <span id="closeNotice">×</span>
+
     <h2>公告</h2>
 
     <div class="notice-body">
-     <p>
-      版本：v0.2.3-alpha <br>
-      更新日志： <br>
-      2026-05-07 <br>
-      <span style="color: blue; font-weight: bold;">
-      ### 添加 <br>
-      - 在左下角添加了网页版本显示 <br>
-      ### 修复 <br>
-      - 修复了移动端网页无法在拖拽模式下拖动角色的问题 <br>
-      ### 重大事件 <br>
-      - 没有大更新，但是因为神秘不知名因素，导致此网站整个文件从我电脑中被删除 <br>
-      - 从github下载之前的了 0.2.1 版本，但是原本正在做的icon文件要重做了。。<br>
-      - 悲痛哀悼我失去的数据… R.I.P
-      </span>
-      ————————————————— <br>
-      此网站为个人创作，目前持续更新中 <br>
-      你可以在这里->! <b>B站Asumu_Imp / Lofter impo 找到我 </b><br>
-      以下是网站反馈问卷调查，有任何bug/意见 都可以填写问卷，我会查看！<br>
-      非常感谢每个参与测试的人！我会尽力完善这个网页的！<br>
-      <!-- 以后就在这里改内容 -->
-     </p>
-      <img src="assets/ui/survey.png" class="notice-img">
+
+      <p>
+        版本：v.0.3.0-alpha<br>
+        更新日期：2026.5.22<br>
+        更新内容：<br>
+	新增<br>
+	- 全局点击计数<br>
+	- 左下角版本号显示<br>
+	- 背包,宝箱，设置按钮<br>
+	- 背景颜色自定义<br>
+	- 鼠标悬停提示
+
+      </p>
+
     </div>
+
   </div>
+
 </div>
 
+<!-- JS -->
 <script src="main.js"></script>
 
 </body>
 </html>
+
